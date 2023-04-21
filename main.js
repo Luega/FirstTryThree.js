@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import * as dat from "dat.gui";
 
 const gui = new dat.GUI();
@@ -49,6 +50,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(devicePixelRatio);
 document.body.appendChild(renderer.domElement);
 
+new OrbitControls(camera, renderer.domElement);
+
 const planeGeometry = new THREE.PlaneGeometry(5, 5, 10, 10);
 const planeMaterial = new THREE.MeshPhongMaterial({
   color: 0xff0000,
@@ -68,6 +71,9 @@ scene.add(planeMesh);
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(0, 0, 1);
 scene.add(light);
+const backlight = new THREE.DirectionalLight(0xffffff, 1);
+backlight.position.set(0, 0, -1);
+scene.add(backlight);
 
 function animate() {
   requestAnimationFrame(animate);
