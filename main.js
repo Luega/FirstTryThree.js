@@ -109,6 +109,18 @@ const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(planeMesh);
 generatePlane();
 
+// sphere
+const sphereGeometry = new THREE.SphereGeometry(40);
+const sphereMaterial = new THREE.MeshPhongMaterial({
+  color: 0xffffff,
+  side: THREE.DoubleSide,
+});
+const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+sphereMesh.position.x = 500;
+sphereMesh.position.y = 1000;
+sphereMesh.position.z = 200;
+scene.add(sphereMesh);
+
 // stars
 const starGeometry = new THREE.BufferGeometry();
 const starMaterial = new THREE.PointsMaterial({
