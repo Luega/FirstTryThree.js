@@ -213,10 +213,7 @@ gsap.to(".my_animation", {
   opacity: 1,
   duration: 1.5,
   ease: "expo",
-  stagger: {
-    each: 0.3,
-    from: "center",
-  },
+  stagger: 0.6,
 });
 
 // animation for Link
@@ -250,5 +247,5 @@ document.querySelector("#githubLink").addEventListener("click", (e) => {
     )
     .add(() => {
       window.location.href = "https://github.com/Luega";
-    });
+    }, "-=0.7");
 });
