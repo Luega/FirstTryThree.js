@@ -6,12 +6,14 @@ import gsap from "gsap";
 // GUI
 const gui = new dat.GUI();
 
+gui.close();
+
 const world = {
   plane: {
-    width: 400,
-    height: 400,
-    widthSegments: 50,
-    heightSegments: 50,
+    width: 800,
+    height: 800,
+    widthSegments: 100,
+    heightSegments: 100,
     red: 0.1,
     green: 0.19,
     blue: 0.4,
@@ -21,10 +23,10 @@ const world = {
   },
 };
 
-gui.add(world.plane, "width", 1, 500).onChange(generatePlane);
-gui.add(world.plane, "height", 1, 500).onChange(generatePlane);
-gui.add(world.plane, "widthSegments", 1, 100).onChange(generatePlane);
-gui.add(world.plane, "heightSegments", 1, 100).onChange(generatePlane);
+gui.add(world.plane, "width", 1, 1000).onChange(generatePlane);
+gui.add(world.plane, "height", 1, 1000).onChange(generatePlane);
+gui.add(world.plane, "widthSegments", 1, 200).onChange(generatePlane);
+gui.add(world.plane, "heightSegments", 1, 200).onChange(generatePlane);
 gui.add(world.plane, "red", 0, 1).onChange(generatePlane);
 gui.add(world.plane, "green", 0, 1).onChange(generatePlane);
 gui.add(world.plane, "blue", 0, 1).onChange(generatePlane);
@@ -248,4 +250,10 @@ document.querySelector("#githubLink").addEventListener("click", (e) => {
     .add(() => {
       window.location.href = "https://github.com/Luega";
     }, "-=0.7");
+});
+
+addEventListener("resize", () => {
+  renderer.setSize(innerWidth, innerHeight);
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix;
 });
