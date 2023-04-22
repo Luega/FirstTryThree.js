@@ -15,9 +15,9 @@ const world = {
     red: 0.1,
     green: 0.19,
     blue: 0.4,
-    redForHoover: 0.1,
-    greenForHoover: 0.5,
-    blueForHoover: 1,
+    redForHover: 0.1,
+    greenForHover: 0.5,
+    blueForHover: 1,
   },
 };
 
@@ -28,9 +28,9 @@ gui.add(world.plane, "heightSegments", 1, 100).onChange(generatePlane);
 gui.add(world.plane, "red", 0, 1).onChange(generatePlane);
 gui.add(world.plane, "green", 0, 1).onChange(generatePlane);
 gui.add(world.plane, "blue", 0, 1).onChange(generatePlane);
-gui.add(world.plane, "redForHoover", 0, 1).onChange(generatePlane);
-gui.add(world.plane, "greenForHoover", 0, 1).onChange(generatePlane);
-gui.add(world.plane, "blueForHoover", 0, 1).onChange(generatePlane);
+gui.add(world.plane, "redForHover", 0, 1).onChange(generatePlane);
+gui.add(world.plane, "greenForHover", 0, 1).onChange(generatePlane);
+gui.add(world.plane, "blueForHover", 0, 1).onChange(generatePlane);
 
 function generatePlane() {
   planeMesh.geometry.dispose();
@@ -90,7 +90,8 @@ document.body.appendChild(renderer.domElement);
 
 new OrbitControls(camera, renderer.domElement);
 
-// MESH
+// MESHES
+// plane
 const planeGeometry = new THREE.PlaneGeometry(
   world.plane.width,
   world.plane.height,
@@ -105,6 +106,25 @@ const planeMaterial = new THREE.MeshPhongMaterial({
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(planeMesh);
 generatePlane();
+
+// stars
+const starGeometry = new THREE.BufferGeometry();
+const starMaterial = new THREE.PointsMaterial({
+  color: 0xffffff,
+});
+const starVertices = [];
+for (let i = 0; i < 3000; i++) {
+  const x = (Math.random() - 0.5) * 2000;
+  const y = (Math.random() - 0.5) * 2000;
+  const z = (Math.random() - 0.5) * 1000;
+  starVertices.push(x, y, z);
+}
+starGeometry.setAttribute(
+  "position",
+  new THREE.Float32BufferAttribute(starVertices, 3)
+);
+const stars = new THREE.Points(starGeometry, starMaterial);
+scene.add(stars);
 
 // LIGHT
 const light = new THREE.DirectionalLight(0xffffff, 1);
@@ -154,9 +174,9 @@ function animate() {
       b: world.plane.blue,
     };
     const hoverColor = {
-      r: world.plane.redForHoover,
-      g: world.plane.greenForHoover,
-      b: world.plane.blueForHoover,
+      r: world.plane.redForHover,
+      g: world.plane.greenForHover,
+      b: world.plane.blueForHover,
     };
     gsap.to(hoverColor, {
       r: initialColor.r,
@@ -181,6 +201,8 @@ function animate() {
       },
     });
   }
+
+  stars.rotation.x += 0.0003;
 }
 
 animate();
