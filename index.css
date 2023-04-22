@@ -8,6 +8,10 @@
   transform: translate(-50%, -50%);
 }
 
+.my_translateY30 {
+  transform: translateY(30px);
+}
+
 .exo_font {
   font-family: "Exo 2", sans-serif;
 }

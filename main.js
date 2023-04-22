@@ -206,3 +206,49 @@ function animate() {
 }
 
 animate();
+
+// animation for text
+gsap.to(".my_animation", {
+  y: 0,
+  opacity: 1,
+  duration: 1.5,
+  ease: "expo",
+  stagger: {
+    each: 0.3,
+    from: "center",
+  },
+});
+
+// animation for Link
+document.querySelector("#githubLink").addEventListener("click", (e) => {
+  e.preventDefault();
+  const lunch = gsap.timeline();
+  lunch
+    .to("#container", { opacity: 0 })
+    .to(camera.position, {
+      z: 25,
+      ease: "power3.in",
+      duration: 3,
+    })
+    .to(
+      camera.rotation,
+      {
+        x: 1.57,
+        ease: "power3.in",
+        duration: 3,
+      },
+      "<"
+    )
+    .to(
+      camera.position,
+      {
+        y: 1000,
+        ease: "power3.in",
+        duration: 1.5,
+      },
+      "-=0.8"
+    )
+    .add(() => {
+      window.location.href = "https://github.com/Luega";
+    });
+});
