@@ -14,7 +14,7 @@ This is a simple project that showcases how to use Three.js, GreenSock, Tailwind
 ## Introduction
 
 The project involves the creation of an immersive and engaging user experience based on an animated 3D background.
-The design also includes the addition of centered text and a button that initiates a custom animation.
+The fully responsive design also includes the addition of centered text and a button that initiates a custom animation.
 The use of dat.gui allows the user to modify the size of the background, the number of faces, and colors.
 
 ![My Image](Screenshot/Screenshot1.png)
