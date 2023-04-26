@@ -19,6 +19,7 @@ The use of dat.gui allows the user to modify the size of the background, the num
 
 ![My Image](Screenshot/Screenshot1.png)
 ![My Image](Screenshot/Screenshot2.png)
+![My Image](Screenshot/Screenshot3.png)
 
 ## Technologies
 
