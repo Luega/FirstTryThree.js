@@ -41,7 +41,7 @@ To use this project, you will need to have the following software installed on y
 
 To install the project, follow these steps:
 
-1. Clone the repository: git clone https://github.com/<your-username>/FirstTryThree.js.git
+1. Clone the repository: git clone https://github.com/Luega/FirstTryThree.js.git
 1. Navigate to the project directory: cd FirstTryThree.js
 1. Install the dependencies: npm install
 
