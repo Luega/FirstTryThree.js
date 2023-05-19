@@ -4,12 +4,12 @@ This is a simple project that showcases how to use Three.js, GreenSock, Tailwind
 
 ## Table of Contents
 
-- [Introduction](https://github.com/Luega/FirstTryThree.js/blob/main/README.md#introduction)
-- [Technologies](https://github.com/Luega/FirstTryThree.js/blob/main/README.md#technologies)
-- [Prerequisites](https://github.com/Luega/FirstTryThree.js/blob/main/README.md#prerequisites)
-- [Installation](https://github.com/Luega/FirstTryThree.js/blob/main/README.md#installation)
-- [Usage](https://github.com/Luega/FirstTryThree.js/blob/main/README.md#usage)
-- [License](https://github.com/Luega/FirstTryThree.js/blob/main/README.md#license)
+- [Introduction](#introduction)
+- [Technologies](#technologies)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
 ## Introduction
 
