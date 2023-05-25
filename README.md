@@ -1,6 +1,8 @@
 # Three.js First Project
 
 This is a simple project that showcases how to use Three.js, GreenSock, TailwindCSS, and Vite.
+[Take a look](https://lucamartinelli3danimation.netlify.app)
+
 
 ## Table of Contents
 
