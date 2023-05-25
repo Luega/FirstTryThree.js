@@ -1,4 +1,4 @@
-# Three.js First Project
+# To infinity and beyond
 
 This is a simple project that showcases how to use Three.js, GreenSock, TailwindCSS, and Vite.
 
